@@ -4,7 +4,7 @@
   --font-serif:'Source Serif 4',Georgia,'Times New Roman',serif;
 
   --blue:#0B57D0;
-  --blue-hdr:#0A2A5C;
+  --blue-hdr:#0C4499;
   --blue-btn:#0A47AE;
   --yellow:#E9C95E;
   --yellow-dot:#F5C842;
@@ -61,6 +61,8 @@ h1,h2,h3,h4,h5,p{margin-top:0}
 .hdr__in{display:flex;align-items:center;justify-content:space-between;height:86px}
 .logo{display:inline-flex;align-items:center;gap:12px;color:#fff}
 .logo b{font-size:var(--word);font-weight:700;letter-spacing:-.02em;line-height:1}
+.logo__mark{object-fit:contain;flex:none}
+.logo--white .logo__mark{filter:brightness(0) invert(1)}
 .hdr__nav{display:flex;align-items:center;gap:28px;color:#fff;font-size:16px}
 .hdr__cta{display:inline-flex;align-items:center;height:46px;padding:0 20px;border-radius:4px;
   background:var(--yellow);color:#0B0B0B;font-weight:700;font-size:15px;margin-left:6px}
