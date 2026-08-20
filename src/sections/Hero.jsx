@@ -1,2 +1,45 @@
 import { Icon } from '../assets/icons.jsx';
-export default function Hero(){return <section className="hero" id="top"><div className="hero-copy"><p className="eyebrow">IIM interview preparation</p><h1>Convert your shortlist into a final admit.</h1><p className="lead">A structured mentorship program for MBA aspirants with personal interview drills, WAT practice, current affairs briefs and feedback from top B-school mentors.</p><div className="actions"><a className="button primary" href="#apply">Apply now <Icon name="arrow" /></a><a className="button ghost" href="#program">Explore program</a></div><ul className="hero-points"><li><Icon name="check" />1:1 mentor reviews</li><li><Icon name="check" />Live mock interviews</li><li><Icon name="check" />Personalized roadmap</li></ul></div><div className="hero-card" aria-label="Program snapshot"><div className="score"><span>96%</span><small>students report higher interview confidence</small></div><div className="timeline"><b>4-week sprint</b><p>Profile deep-dive → WAT drills → mock panels → final polish</p></div><div className="mini-grid"><span>PI</span><span>WAT</span><span>GD</span><span>HR</span></div></div></section>}
+import { asset } from '../config/siteConfig';
+
+export default function Hero() {
+  return (
+    <section className="hero">
+      <div className="container hero__grid">
+        <div className="hero__copy">
+          <span className="pill pill--blue"><i />OUR IIM JOURNEY, PERSONALIZED.</span>
+          <h1>The IIM Game<br />is Bigger Than CAT</h1>
+          <p className="hero__sub">
+            Personalized guidance for CAT, profile building, resumes, GDPI, interviews, and your
+            complete MBA journey.
+          </p>
+          <div className="hero__actions">
+            <a className="btn btn--rect btn--yellow" href="#assessment">
+              Check My IIM Profile <Icon name="arrow" size={17} />
+            </a>
+            <a className="btn btn--rect btn--navy" href="#contact">
+              Book a Free Consultation
+            </a>
+          </div>
+          <p className="hero__trust">
+            Personalized strategy <i>•</i> Expert mentorship <i>•</i> End-to-end guidance
+          </p>
+        </div>
+
+        <div className="hero__media">
+          <img
+            className="hero__img"
+            src={asset('hero-students.png')}
+            alt="Students walking on an IIM campus"
+            loading="eager"
+          />
+          <div className="hero__stat">
+            <b>92%</b>
+            <span className="hero__stat-label">Placement Rate</span>
+            <p>Across all flagship programs · 2024–25</p>
+            <div className="hero__stat-rules"><i /><i /></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

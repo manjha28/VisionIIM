@@ -1,21 +1,21 @@
 export const siteConfig = {
   name: 'VisionIIM',
-  tagline: 'The Complete MBA Interview Prep Platform',
+  tagline:
+    'Your partner in the journey from aspiration to admission. Expert mentorship, profile building, and CAT strategy.',
   formEndpoint: import.meta.env.VITE_GOOGLE_SCRIPT_URL || '',
-  cta: { primary: '#apply', secondary: '#program' },
   nav: [
-    { label: 'Program', href: '#program' },
-    { label: 'Mentors', href: '#mentors' },
-    { label: 'Results', href: '#results' },
-    { label: 'Apply', href: '#apply' },
+    { label: 'About us', href: '#about' },
+    { label: 'Contact us', href: '#contact' },
+    { label: 'Our Team', href: '#team' },
   ],
-  socials: [{ label: 'Email', href: 'mailto:hello@visioniim.example' }],
+  address: 'PLATINA TOWER-2, A Block, DLF Phase 1, Gurugram, Sikanderpur Ghosi, Haryana 122002',
+  email: 'info@visioniim.com',
+  phone: '+91-9870437600',
+  socials: [
+    { label: 'LinkedIn', icon: 'linkedin', href: '#' },
+    { label: 'Instagram', icon: 'instagram', href: '#' },
+    { label: 'X', icon: 'x', href: '#' },
+  ],
 };
 
-export const formFields = [
-  { name: 'name', label: 'Full name', type: 'text', required: true, autoComplete: 'name' },
-  { name: 'email', label: 'Email address', type: 'email', required: true, autoComplete: 'email' },
-  { name: 'phone', label: 'Phone number', type: 'tel', required: true, autoComplete: 'tel' },
-  { name: 'target', label: 'Target exam / interview', type: 'text', required: true },
-  { name: 'message', label: 'How can we help?', type: 'textarea', required: false },
-];
+export const asset = (file) => `${import.meta.env.BASE_URL}images/${file}`;

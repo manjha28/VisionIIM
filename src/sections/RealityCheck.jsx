@@ -1,2 +1,36 @@
-const cards=[['PROFILE AUDIT',"Don't know where you stand?",'Understand your profile and realistic college opportunities across top IIMs and Tier-1 B-Schools with data-backed benchmarking.'],['STRATEGIC ROADMAP','Preparing without a strategy?','Know exactly what to prioritize in QA, DILR & VARC, and when to pivot from raw mock scores to sectional accuracy.'],['GDPI & WAT','Worried about GDPI?','Practice realistic panel interview scenarios, WAT writing, and SOP deep-dives with seasoned IIM alumni panel members.'],['APPLICATION MASTERY','Confused about applications?','Get expert guidance on profile positioning, resume storytelling, and application essays that stand out in the pile.']];
-export default function RealityCheck(){return <section className="section white reality" id="about"><div className="center-head"><span className="pill light"><i/>THE REALITY CHECK</span><h2>CAT Isn't the Only Thing<br/>Standing Between You & IIM.</h2><p>Getting into a top IIM isn't just about your percentile. You need the right strategy, profile, applications, resume and interview preparation all working together.</p></div><div className="reality-grid">{cards.map(([tag,title,body])=><article className="reality-card" key={tag}><span>{tag}</span><h3>{title}</h3><p>{body}</p></article>)}</div><div className="strategy-strip"><span className="emblem">✦</span><strong>More than Coaching, Your Goal deserves a <b>Complete Strategy.</b></strong></div></section>}
+import { realityCards } from './data';
+import Logo from '../components/Logo.jsx';
+
+export default function RealityCheck() {
+  return (
+    <section className="section reality" id="about">
+      <div className="container">
+        <div className="head-center">
+          <span className="pill pill--light"><i />THE REALITY CHECK</span>
+          <h2 className="h2">CAT Isn't the Only Thing<br />Standing Between You &amp; IIM.</h2>
+          <p>
+            Getting into a top IIM isn't just about your percentile. You need the right strategy,
+            profile, applications, resume and interview preparation all working together.
+          </p>
+        </div>
+
+        <div className="reality__grid">
+          {realityCards.map(([tag, title, body]) => (
+            <article className="reality__card" key={tag}>
+              <span className="pill pill--outline-blue">{tag}</span>
+              <h3>{title}</h3>
+              <p>{body}</p>
+            </article>
+          ))}
+        </div>
+
+        <div className="strip">
+          <Logo size={40} showWord={false} />
+          <strong>
+            More than Coaching, Your Goal deserves a <em>Complete Strategy.</em>
+          </strong>
+        </div>
+      </div>
+    </section>
+  );
+}

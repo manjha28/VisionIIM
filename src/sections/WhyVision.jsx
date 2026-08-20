@@ -1,2 +1,36 @@
-const values=[['01','Personalized','Your strategy starts with your profile, academics and work experience — never a generic batch approach.'],['02','End-to-End','From CAT baseline to profile building, resume, WAT, GDPI and final IIM conversion under one roof.'],['03','Mentor-Led','Direct guidance, 1:1 sessions, and strategy reviews from alumni of IIM Ahmedabad, Bangalore, and Calcutta.'],['04','Data-Driven','Make decisions based on historical conversion data, sectional accuracy, and your target B-school criteria.'],['05','Community-Powered','Stay motivated, solve peer doubts, and compete in daily challenges within an elite aspirant network.']];
-export default function WhyVision(){return <section className="blue-section why" id="team"><div className="orbit"/><div className="why-copy"><span className="pill blue"><i/>WHY VISION IIM</span><h2>Not Another<br/>Coaching Institute</h2><p>We built Vision IIM to replace impersonal coaching batches with bespoke mentorship and data-driven admission engineering.</p></div><div className="value-grid">{values.map(([n,t,b])=><article key={n}><span>◆ {n}</span><h3>{t}</h3><p>{b}</p></article>)}</div></section>}
+import { values } from './data';
+
+export default function WhyVision() {
+  return (
+    <section className="why" id="team">
+      <svg className="why__orbit" viewBox="0 0 900 900" aria-hidden="true">
+        {[210, 300, 390, 470].map((r) => (
+          <circle key={r} cx="90" cy="450" r={r} fill="none" stroke="#fff" strokeOpacity=".28" strokeDasharray="3 9" />
+        ))}
+        <path d="M90 240l7 7-7 7-7-7z" fill="#fff" fillOpacity=".5" />
+        <path d="M90 660l7 7-7 7-7-7z" fill="#fff" fillOpacity=".5" />
+      </svg>
+
+      <div className="container why__grid">
+        <div className="why__copy">
+          <span className="pill pill--blue"><i />WHY VISION IIM</span>
+          <h2 className="h2">Not Another<br />Coaching Institute</h2>
+          <p>
+            We built Vision IIM to replace impersonal coaching batches with bespoke mentorship and
+            data-driven admission engineering.
+          </p>
+        </div>
+
+        <div className="why__values">
+          {values.map(([n, t, b]) => (
+            <article className="val" key={n}>
+              <span><b>◆</b> {n}</span>
+              <h3>{t}</h3>
+              <p>{b}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
