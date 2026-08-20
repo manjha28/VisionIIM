@@ -1,0 +1,2 @@
+const stats=[['500+','aspirants mentored'],['40+','B-school interview themes'],['4.8/5','average session rating']];
+export default function Results(){return <section className="results" id="results"><p className="eyebrow">Outcomes</p><h2>Practice that feels like the real interview.</h2><div className="stats">{stats.map(([n,l])=><div key={n}><strong>{n}</strong><span>{l}</span></div>)}</div></section>}
