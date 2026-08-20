@@ -1,26 +1,21 @@
 export const siteConfig = {
   name: 'VisionIIM',
+  tagline: 'The Complete MBA Interview Prep Platform',
   formEndpoint: import.meta.env.VITE_GOOGLE_SCRIPT_URL || '',
+  cta: { primary: '#apply', secondary: '#program' },
   nav: [
-    { label: 'About us', href: '#about' },
-    { label: 'Contact us', href: '#contact' },
-    { label: 'Our Team', href: '#team' },
+    { label: 'Program', href: '#program' },
+    { label: 'Mentors', href: '#mentors' },
+    { label: 'Results', href: '#results' },
+    { label: 'Apply', href: '#apply' },
   ],
+  socials: [{ label: 'Email', href: 'mailto:hello@visioniim.example' }],
 };
 
-export const contactFields = [
-  { name: 'name', label: 'Full Name', type: 'text', required: true, placeholder: 'Select from the list', autoComplete: 'name' },
-  { name: 'email', label: 'Email', type: 'email', required: true, placeholder: 'your@email.com', autoComplete: 'email' },
-  { name: 'phone', label: 'Phone', type: 'tel', required: true, placeholder: '+91', autoComplete: 'tel' },
-  { name: 'message', label: 'Message', type: 'textarea', required: true, placeholder: 'Enter your message' },
-];
-
-export const missingAssets = [
-  'Hero IIM students campus image',
-  'Profile assessment student with analytics overlay image',
-  'Program card images for CAT prep, counselling, resume, and GDPI',
-  'Why Vision IIM decorative orbit illustration if not CSS-generated',
-  'Get in touch woman image',
-  'Final CTA student collage',
-  'Footer campus line-art background',
+export const formFields = [
+  { name: 'name', label: 'Full name', type: 'text', required: true, autoComplete: 'name' },
+  { name: 'email', label: 'Email address', type: 'email', required: true, autoComplete: 'email' },
+  { name: 'phone', label: 'Phone number', type: 'tel', required: true, autoComplete: 'tel' },
+  { name: 'target', label: 'Target exam / interview', type: 'text', required: true },
+  { name: 'message', label: 'How can we help?', type: 'textarea', required: false },
 ];

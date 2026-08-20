@@ -26,7 +26,7 @@ npm run build
 npm run preview
 ```
 
-The Vite production base path is fixed to `/VisionIIM/` because this repository is deployed at `https://manjha28.github.io/VisionIIM/`.
+Vite automatically uses `/<repository>/` as the base path in GitHub Actions. Set `VITE_BASE_PATH` if you need to override it.
 
 ## GitHub Pages deployment
 
@@ -36,18 +36,6 @@ The workflow in `.github/workflows/deploy.yml` installs dependencies, builds the
 2. Add repository variable `VITE_GOOGLE_SCRIPT_URL` containing the Apps Script `/exec` URL.
 3. Push to `main`.
 
-
-## Missing Figma/PDF image assets
-
-The repository does not currently contain the photographic assets shown in `VisionIIM.pdf`. To avoid silently substituting unrelated stock imagery, the site uses clearly labeled CSS placeholders in those image slots. Export and replace these assets from Figma/PDF for pixel-level fidelity:
-
-- Hero IIM students campus image.
-- Free profile assessment student-with-analytics image.
-- Four program-card images: CAT prep student, counselling conversation, resume review, and IIM panel interview.
-- Get-in-touch woman image.
-- Final CTA student collage.
-- Footer campus line-art background.
-
 ## Form fields and Google Sheet columns
 
 Frontend fields: full name, email address, phone number, target exam/interview, and optional message. The sheet stores: `Timestamp`, `Submission ID`, `Name`, `Email`, `Phone`, `Target`, `Message`, `Page`, and `User Agent`.
@@ -56,15 +44,11 @@ Frontend fields: full name, email address, phone number, target exam/interview, 
 
 See `google-apps-script/README.md` for the full setup. The frontend uses `FormData` with `fetch(..., { mode: 'no-cors' })` to avoid Google Apps Script CORS preflight failures. Because `no-cors` responses are opaque, a completed network send displays success; validation failures should also be monitored in the Google Sheet during setup.
 
-## Deployment blank-page diagnostics
-
-The GitHub Pages build must emit asset URLs under `/VisionIIM/assets/...`. If `dist/index.html` references `/assets/...`, the app will render a blank page on GitHub Pages because the JavaScript bundle is requested from the domain root instead of the repository path.
-
 ## QA checklist
 
 - [ ] Confirm exact Figma typography, spacing, and assets once Figma inspection access is available.
 - [ ] Test responsive widths: 1440, 1280, 1024, 768, 390, and 375 px.
 - [ ] Submit a valid form and verify a sheet row is appended.
 - [ ] Submit invalid email/phone and verify accessible errors.
-- [ ] Confirm GitHub Pages URL loads assets under `/VisionIIM/assets/...`.
+- [ ] Confirm GitHub Pages URL loads assets under the repository base path.
 - [ ] Confirm optional email notification after setting `SEND_NOTIFICATION_EMAIL = true`.
