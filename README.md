@@ -26,7 +26,7 @@ npm run build
 npm run preview
 ```
 
-The Vite production base path is fixed to `/VisionIIM/` because this repository is deployed at `https://manjha28.github.io/VisionIIM/`.
+Vite automatically uses `/<repository>/` as the base path in GitHub Actions. Set `VITE_BASE_PATH` if you need to override it.
 
 ## GitHub Pages deployment
 
@@ -44,15 +44,11 @@ Frontend fields: full name, email address, phone number, target exam/interview, 
 
 See `google-apps-script/README.md` for the full setup. The frontend uses `FormData` with `fetch(..., { mode: 'no-cors' })` to avoid Google Apps Script CORS preflight failures. Because `no-cors` responses are opaque, a completed network send displays success; validation failures should also be monitored in the Google Sheet during setup.
 
-## Deployment blank-page diagnostics
-
-The GitHub Pages build must emit asset URLs under `/VisionIIM/assets/...`. If `dist/index.html` references `/assets/...`, the app will render a blank page on GitHub Pages because the JavaScript bundle is requested from the domain root instead of the repository path.
-
 ## QA checklist
 
 - [ ] Confirm exact Figma typography, spacing, and assets once Figma inspection access is available.
 - [ ] Test responsive widths: 1440, 1280, 1024, 768, 390, and 375 px.
 - [ ] Submit a valid form and verify a sheet row is appended.
 - [ ] Submit invalid email/phone and verify accessible errors.
-- [ ] Confirm GitHub Pages URL loads assets under `/VisionIIM/assets/...`.
+- [ ] Confirm GitHub Pages URL loads assets under the repository base path.
 - [ ] Confirm optional email notification after setting `SEND_NOTIFICATION_EMAIL = true`.
