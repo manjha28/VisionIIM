@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { siteConfig, asset } from '../config/siteConfig';
 import { Icon, BrandIcon } from '../assets/icons.jsx';
 import Logo from './Logo.jsx';
@@ -19,18 +20,18 @@ export default function Footer() {
 
         <div className="footer__col">
           <h4>Company</h4>
-          <a href="#top">Home</a>
-          <a href="#about">About us</a>
-          <a href="#contact">Contact us</a>
+          <Link to="/">Home</Link>
+          <Link to="/about">About us</Link>
+          <Link to="/contact">Contact us</Link>
         </div>
 
         <div className="footer__col">
           <h4>Services</h4>
-          <a href="#programs">CAT Preparation</a>
-          <a href="#programs">Career &amp; IIM Counselling</a>
-          <a href="#programs">Resume &amp; Profile Building</a>
-          <a href="#programs">GDPI &amp; Interview Preparation</a>
-          <a href="#team">Student Community</a>
+          <Link to="/">CAT Preparation</Link>
+          <Link to="/">Career &amp; IIM Counselling</Link>
+          <Link to="/">Resume &amp; Profile Building</Link>
+          <Link to="/">GDPI &amp; Interview Preparation</Link>
+          <Link to="/team">Student Community</Link>
         </div>
 
         <div className="footer__col footer__contact">

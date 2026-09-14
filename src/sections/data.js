@@ -58,3 +58,29 @@ export const assessmentOptions = {
   percentile: ['Below 80', '80 – 90', '90 – 95', '95 – 98', '98 – 99', '99+'],
   goal: ['IIM A / B / C', 'Older IIMs', 'New IIMs', 'Tier-1 Non-IIM', 'Undecided'],
 };
+
+export const team = [
+  { name: 'Name', role: 'Designation', img: 'team-1.jpg', li: '#' },
+  { name: 'Name', role: 'Designation', img: 'team-2.jpg', li: '#' },
+  { name: 'Name', role: 'Designation', img: 'team-3.jpg', li: '#' },
+  { name: 'Name', role: 'Designation', img: 'team-4.jpg', li: '#' },
+  { name: 'Name', role: 'Designation', img: 'team-5.jpg', li: '#' },
+  { name: 'Name', role: 'Designation', img: 'team-6.jpg', li: '#' },
+  { name: 'Name', role: 'Designation', img: 'team-7.jpg', li: '#' },
+  { name: 'Name', role: 'Designation', img: 'team-8.jpg', li: '#' },
+];
+
+export const trustValues = [
+  ['01', 'Personal', 'We understand the individual behind the percentile.'],
+  ['02', 'Honest', 'We tell you what you need to hear not just what you want to hear.'],
+  ['03', 'Actionable', 'Every conversation should leave you with a clearer next step.'],
+  ['04', 'Student first', 'Your goals come before a standard playbook.'],
+  ['05', 'Community-Powered', 'Stay motivated, solve peer doubts, and compete in daily challenges within an elite aspirant network.'],
+];
+
+export const beliefs = [
+  ['globe', 'Talent is universal', 'Great minds come from everywhere, not just metros or elite colleges.'],
+  ['users', 'Mentorship matters', "Learning from someone who's been there changes everything."],
+  ['target', 'Strategy over struggle', 'With the right roadmap, smart work beats hard work.'],
+  ['shield', 'Integrity over shortcuts', 'We stand for real growth, not inflated promises.'],
+];

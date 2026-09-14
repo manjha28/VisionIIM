@@ -4,9 +4,10 @@ export const siteConfig = {
     'Your partner in the journey from aspiration to admission. Expert mentorship, profile building, and CAT strategy.',
   formEndpoint: import.meta.env.VITE_GOOGLE_SCRIPT_URL || '',
   nav: [
-    { label: 'About us', href: '#about' },
-    { label: 'Contact us', href: '#contact' },
-    { label: 'Our Team', href: '#team' },
+    { label: 'Home', href: '/' },
+    { label: 'About us', href: '/about' },
+    { label: 'Our Team', href: '/team' },
+    { label: 'Contact us', href: '/contact' },
   ],
   address: 'PLATINA TOWER-2, A Block, DLF Phase 1, Gurugram, Sikanderpur Ghosi, Haryana 122002',
   email: 'info@visioniim.com',

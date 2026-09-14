@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Icon } from '../assets/icons.jsx';
-import { asset } from '../config/siteConfig';
+import { siteConfig, asset } from '../config/siteConfig';
 import { submitToScript } from '../lib/submitForm.js';
 
 const blank = { name: '', email: '', phone: '', message: '' };
@@ -15,7 +15,7 @@ function validate(v) {
   return e;
 }
 
-export default function Contact() {
+export default function Contact({ heading = 'Get in touch', showLinks = false }) {
   const [v, setV] = useState(blank);
   const [errors, setErrors] = useState({});
   const [status, setStatus] = useState('idle');
@@ -46,10 +46,22 @@ export default function Contact() {
   return (
     <section className="section contact" id="contact">
       <div className="container contact__grid">
-        <img className="contact__img" src={asset('contact-woman.jpg')} alt="VisionIIM counsellor" loading="lazy" />
+        <div className="contact__media">
+          <img className="contact__img" src={asset('contact-woman.jpg')} alt="VisionIIM counsellor" loading="lazy" />
+          {showLinks && (
+            <div className="contact__links">
+              <a className="contact__link" href={`mailto:${siteConfig.email}`}>
+                <Icon name="mail" size={22} />{siteConfig.email}
+              </a>
+              <a className="contact__link" href={`tel:${siteConfig.phone.replace(/[^+\d]/g, '')}`}>
+                <Icon name="phone" size={22} />{siteConfig.phone}
+              </a>
+            </div>
+          )}
+        </div>
 
         <div className="contact__card">
-          <h2 className="h2 contact__h2">Get in touch</h2>
+          <h2 className="h2 contact__h2">{heading}</h2>
           <p className="contact__sub">
             Feel free to contact us with any questions or concerns. You can use the below form or
             email us directly.

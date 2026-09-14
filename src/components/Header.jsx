@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { NavLink, Link } from 'react-router-dom';
 import { siteConfig } from '../config/siteConfig';
 import { Icon } from '../assets/icons.jsx';
 import Logo from './Logo.jsx';
@@ -8,9 +9,9 @@ export default function Header() {
   return (
     <header className="hdr" id="top">
       <div className="container hdr__in">
-        <a href="#top" className="hdr__brand" aria-label="VisionIIM home">
+        <Link to="/" className="hdr__brand" aria-label="VisionIIM home" onClick={() => setOpen(false)}>
           <Logo size={40} wordSize={29} />
-        </a>
+        </Link>
         <button
           className="hdr__burger"
           onClick={() => setOpen(!open)}
@@ -22,13 +23,19 @@ export default function Header() {
         </button>
         <nav id="site-nav" className={open ? 'hdr__nav is-open' : 'hdr__nav'}>
           {siteConfig.nav.map((i) => (
-            <a key={i.href} href={i.href} onClick={() => setOpen(false)}>
+            <NavLink
+              key={i.href}
+              to={i.href}
+              end={i.href === '/'}
+              className={({ isActive }) => (isActive ? 'is-active' : undefined)}
+              onClick={() => setOpen(false)}
+            >
               {i.label}
-            </a>
+            </NavLink>
           ))}
-          <a className="hdr__cta" href="#contact" onClick={() => setOpen(false)}>
+          <Link className="hdr__cta" to="/contact" onClick={() => setOpen(false)}>
             Book a Free Consultation
-          </a>
+          </Link>
         </nav>
       </div>
     </header>

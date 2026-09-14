@@ -1,8 +1,13 @@
 import { values } from './data';
 
-export default function WhyVision() {
+export default function WhyVision({
+  eyebrow = 'WHY VISION IIM',
+  title = <>Not Another<br />Coaching Institute</>,
+  body = 'We built Vision IIM to replace impersonal coaching batches with bespoke mentorship and data-driven admission engineering.',
+  items = values,
+}) {
   return (
-    <section className="why" id="team">
+    <section className="why">
       <svg className="why__orbit" viewBox="0 0 900 900" aria-hidden="true">
         {[210, 300, 390, 470].map((r) => (
           <circle key={r} cx="90" cy="450" r={r} fill="none" stroke="#fff" strokeOpacity=".28" strokeDasharray="3 9" />
@@ -13,16 +18,13 @@ export default function WhyVision() {
 
       <div className="container why__grid">
         <div className="why__copy">
-          <span className="pill pill--blue"><i />WHY VISION IIM</span>
-          <h2 className="h2">Not Another<br />Coaching Institute</h2>
-          <p>
-            We built Vision IIM to replace impersonal coaching batches with bespoke mentorship and
-            data-driven admission engineering.
-          </p>
+          <span className="pill pill--blue"><i />{eyebrow}</span>
+          <h2 className="h2">{title}</h2>
+          <p>{body}</p>
         </div>
 
         <div className="why__values">
-          {values.map(([n, t, b]) => (
+          {items.map(([n, t, b]) => (
             <article className="val" key={n}>
               <span><b>◆</b> {n}</span>
               <h3>{t}</h3>

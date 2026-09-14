@@ -1,0 +1,74 @@
+/* ============ header active state ============ */
+.hdr__nav a:not(.hdr__cta){color:rgba(255,255,255,.82)}
+.hdr__nav a:not(.hdr__cta):hover{color:#fff}
+.hdr__nav a.is-active:not(.hdr__cta){color:#fff;font-weight:700}
+
+/* ============ generic page hero (Team, Contact) ============ */
+.phero{padding:80px 0 0}
+.phero__h1{font-size:clamp(36px,4.3vw,60px);line-height:1.07;letter-spacing:-.025em;font-weight:600;margin:22px 0 18px}
+.phero>.container>p{font-size:17px;line-height:1.5;color:#1B1B1B;max-width:520px;margin:0}
+.phero + .section{padding-top:48px}
+
+/* ============ team grid ============ */
+.team__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
+.tm{background:var(--tint-2);border-radius:14px;overflow:hidden}
+.tm__img{width:100%;aspect-ratio:1/1;object-fit:cover;object-position:center top;background:#E4E9F2}
+.tm__row{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:16px 18px 18px}
+.tm__name{font-size:18px;font-weight:600;letter-spacing:-.01em;margin:0}
+.tm__role{font-family:var(--font-mono);font-size:11px;letter-spacing:.06em;color:var(--muted);margin:5px 0 0}
+.tm__li{flex:none;display:inline-grid;place-items:center;width:36px;height:36px;border-radius:6px;background:#0A66C2;color:#fff}
+.tm__li:hover{background:#08529b}
+
+/* ============ contact page extras ============ */
+.contact__media{display:flex;flex-direction:column}
+.contact__media .contact__img{min-height:0;flex:1;aspect-ratio:600/560;height:auto}
+.contact__links{display:grid;gap:12px;justify-items:start;margin-top:26px}
+.contact__link{display:inline-flex;align-items:center;gap:12px;color:var(--blue);font-size:26px;letter-spacing:-.01em}
+.contact__link:hover{text-decoration:underline}
+
+/* ============ about hero ============ */
+.ahero{background:var(--blue);color:#fff;padding:70px 0 0;text-align:center}
+.ahero__h1{font-size:clamp(32px,3.9vw,55px);line-height:1.1;letter-spacing:-.022em;font-weight:600;margin:22px 0 18px}
+.ahero__sub{font-size:17px;line-height:1.55;color:rgba(255,255,255,.94);margin:0}
+.ahero__split{margin-top:52px;background:linear-gradient(to bottom,var(--blue) 46%,#fff 46%)}
+.ahero__imgs{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.ahero__imgs img{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:12px;background:#0A47AE}
+
+/* ============ our story / mission-vision mosaic ============ */
+.story2 .head-center .h2{margin:22px 0 16px}
+.mosaic{display:grid;grid-template-columns:1fr 1fr;margin-top:52px;border-radius:4px;overflow:hidden}
+.mosaic__text{background:#F3F2ED;padding:52px 48px;display:flex;flex-direction:column;justify-content:center}
+.mosaic__text h3{font-size:34px;font-weight:400;letter-spacing:-.015em;margin:0 0 18px}
+.mosaic__text p{font-size:15px;line-height:1.62;color:#3A3A3A;margin:0}
+.mosaic>img{width:100%;height:100%;min-height:340px;object-fit:cover;background:#E4E9F2}
+
+/* ============ core beliefs ============ */
+.beliefs__h2{margin:22px 0 40px}
+.beliefs__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
+.belief{background:var(--tint-2);border-radius:12px;padding:26px 24px 30px}
+.belief__icon{display:inline-grid;place-items:center;width:44px;height:44px;border-radius:10px;background:var(--blue);color:#fff;margin-bottom:20px}
+.belief h3{font-size:19px;line-height:1.28;font-weight:600;letter-spacing:-.01em;margin:0 0 10px}
+.belief p{font-size:14px;line-height:1.55;color:#3A3A3A;margin:0}
+
+/* ============ responsive ============ */
+@media (max-width:1180px){
+  .team__grid,.beliefs__grid{gap:22px}
+  .mosaic__text{padding:40px 34px}
+}
+@media (max-width:1024px){
+  .team__grid,.beliefs__grid{grid-template-columns:repeat(2,1fr)}
+  .contact__link{font-size:22px}
+}
+@media (max-width:900px){
+  .mosaic{grid-template-columns:1fr}
+  .mosaic>img{min-height:260px}
+  .ahero__imgs{grid-template-columns:1fr}
+  .ahero__split{background:linear-gradient(to bottom,var(--blue) 24%,#fff 24%)}
+  .contact__media .contact__img{aspect-ratio:16/11}
+}
+@media (max-width:560px){
+  .team__grid,.beliefs__grid{grid-template-columns:1fr}
+  .contact__link{font-size:19px}
+  .mosaic__text{padding:30px 22px}
+  .mosaic__text h3{font-size:27px}
+}
